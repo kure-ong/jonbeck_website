@@ -20,10 +20,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.4",
-    "jquery": "^3.0.0",
     "run-sequence": "^1.2.1"
   },
   "dependencies": {
+    "jquery": "git://github.com/jquery/jquery.git#1.12.4",
     "normalize.css": "^4.2.0",
     "retinajs": "^2.1.0"
   }

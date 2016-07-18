@@ -3265,3 +3265,36 @@ textarea {
   overflow: visible;
   clip: auto;
 }
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+main, footer {
+  width: 100%;
+  margin-left: 100px;
+}
+
+header {
+  width: 100px;
+}
+
+section {
+  width: 100%;
+}
+
+body * {
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h5 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+}
+
+h1, h2 {
+  font-weight: 700;
+}

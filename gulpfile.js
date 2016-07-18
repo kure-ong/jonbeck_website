@@ -17,10 +17,14 @@ var browserSync = require('browser-sync').create();
 
 var dev = {
 	styles: ['dev/scss/**/*.+(scss|sass)'],
-	scripts: ['node_modules/jquery/dist/jquery.min.js','node_modules/retinajs/dist/retina.min.js','dev/js/custom.js'],
+	scripts: ['node_modules/retinajs/dist/retina.min.js','dev/js/custom.js'],
 	images: ['dev/img/**/*.+(png|jpg|jpeg|gif|svg)'],
 	fonts: ['dev/fonts/**/*'],
 }
+
+var jsImports = [
+	'node_modules/jquery/dist/jquery.min.js'
+]
 
 var sassImports = [
 	'node_modules/normalize.css/normalize.css',
@@ -54,6 +58,13 @@ gulp.task('sassImports', function() {
 	return gulp.src(sassImports)
 		.pipe(gulpIf('!*.scss',cache(rename({prefix:'_',extname:'.scss'}))))
 		.pipe(gulp.dest('dev/scss/generic'));
+})
+
+gulp.task('jsImports', function() {
+	return gulp.src(jsImports)
+		.pipe(gulpIf('!*.min.js',cache(uglify())))
+		.pipe(gulpIf('!*.min.js',cache(rename({suffix:'.min',extname:'.js'}))))
+		.pipe(gulp.dest('build/js'));
 })
 
 gulp.task('sass', function(){
@@ -99,7 +110,7 @@ gulp.task('watch',['browserSync','sassImports','sass','scripts','html','images',
 });
 
 gulp.task('build', function(callback){
-	runSequence('clean:build',['sassImports','sass','scripts','html','images','fonts'],callback);
+	runSequence('clean:build',['sassImports','jsImports','sass','scripts','html','images','fonts'],callback);
 });
 
 gulp.task('default', function(callback){
