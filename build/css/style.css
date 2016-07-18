@@ -3276,25 +3276,123 @@ html {
 
 main, footer {
   width: 100%;
-  margin-left: 100px;
+  padding-left: 100px;
 }
 
-header {
+aside {
   width: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 section {
   width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-body * {
+section::before, section::after {
+  content: '';
+  display: table;
+  zoom: 1;
+}
+
+section::after {
+  clear: both;
+}
+
+html {
+  font-size: 16px;
   font-family: "Open Sans", Arial, sans-serif;
+}
+
+aside {
+  font-size: 1rem;
+}
+
+main {
+  font-size: 1rem;
+}
+
+footer {
+  font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h5 {
   font-family: "Playfair Display", "Times New Roman", serif;
 }
 
-h1, h2 {
+h1 {
   font-weight: 700;
+  font-size: 3.75em;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2.625em;
+}
+
+h3 {
+  font-size: 2.25em;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h5 {
+  font-family: #1f3a55;
+}
+
+.jonbecklink {
+  color: #d4a26f;
+}
+
+.nav {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.nav ul {
+  padding-left: 0;
+}
+
+.nav__item {
+  font-size: 1.625em;
+  list-style: none;
+}
+
+.nav__item a {
+  color: #1f3a55;
+}
+
+.nav__item--child {
+  font-size: 0.61538em;
+}
+
+.ftWorks {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.ftWorks::before, .ftWorks::after {
+  content: '';
+  display: table;
+  zoom: 1;
+}
+
+.ftWorks::after {
+  clear: both;
+}
+
+.workItem {
+  width: 50%;
+  display: block;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 1px;
+  float: left;
 }

@@ -1,0 +1,25 @@
+.jonbecklink {
+  color: $color-highlight;
+}
+
+.nav {
+  font-family: $font-pri;
+  font-weight: 700;
+}
+
+.nav ul {
+  padding-left: 0;
+}
+
+.nav__item {
+  font-size: em(26);
+  list-style: none;
+
+  a{
+    color: $color-pri;
+  }
+}
+
+.nav__item--child {
+  font-size: em(16,26);
+}

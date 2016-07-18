@@ -1,0 +1,7 @@
+.ftWorks {
+  @include row();
+}
+
+.workItem {
+  @include col(6);
+}

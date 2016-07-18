@@ -1,0 +1,25 @@
+@mixin row() {
+  
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  &::before, &::after {
+    content: '';
+    display: table;
+    zoom:1;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin col($columns) {
+  width: percentage(1 / $grid-columns) * $columns;
+  display: block;
+  padding-left: ( $gutter / 2 );
+  padding-right: ( $gutter / 2 );
+  min-height: 1px;
+  float: left;
+}
