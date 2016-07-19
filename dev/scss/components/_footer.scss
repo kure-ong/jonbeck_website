@@ -1,0 +1,35 @@
+
+
+.footerHeading {
+  color: $color-grey;
+}
+
+.footerInfo {
+  list-style: none;
+  margin-bottom: 2em;
+}
+
+.footerInfo__item {
+  color: $color-grey;
+  font-family: $font-pri;
+  font-weight: 700;
+  font-size: em(21);
+  margin-bottom: 0.3em;
+}
+
+.footerInfo__item a {
+  color: $color-grey;
+  border-bottom: 1px dotted transparent;
+  transition: all .4s ease-in-out;
+}
+
+.footerInfo__item a:hover {
+  color: $color-highlight;
+  border-bottom: 1px dotted $color-highlight;
+}
+
+.footerBar {
+  font-size: em(14);
+  color: $color-grey;
+  @include row();
+}

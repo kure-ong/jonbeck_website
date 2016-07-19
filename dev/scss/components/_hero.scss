@@ -1,0 +1,19 @@
+.hero {
+  height: 632px;
+  position: relative;
+  @include retina('../img/hero-dt.jpg',3,135%,left center no-repeat);
+  color:$color-text-inverse;
+}
+
+.hero__content {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.scrollDownHint {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+}

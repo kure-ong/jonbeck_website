@@ -1,0 +1,14 @@
+.intro {
+  background-color: $color-sec;
+  color: $color-text-inverse;
+}
+
+.jonbecklink {
+  color: $color-highlight;
+  border-bottom: 1px dotted transparent;
+  transition: all .4s ease-in-out;
+}
+
+.jonbecklink:hover {
+  border-bottom: 1px dotted $color-highlight;
+}

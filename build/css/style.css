@@ -3274,6 +3274,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background-color: #eee;
+}
+
 main, footer {
   width: 100%;
   padding-left: 100px;
@@ -3284,22 +3288,9 @@ aside {
   position: fixed;
   top: 0;
   left: 0;
-}
-
-section {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-section::before, section::after {
-  content: '';
-  display: table;
-  zoom: 1;
-}
-
-section::after {
-  clear: both;
+  height: 100%;
+  background-color: #fff;
+  z-index: 99;
 }
 
 html {
@@ -3317,10 +3308,13 @@ main {
 
 footer {
   font-size: 1rem;
+  text-align: center;
 }
 
-h1, h2, h3, h4, h5, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", "Times New Roman", serif;
+  position: relative;
+  margin-top: 0;
 }
 
 h1 {
@@ -3335,6 +3329,11 @@ h2 {
 
 h3 {
   font-size: 2.25em;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.43;
 }
 
 a {
@@ -3342,12 +3341,39 @@ a {
   font-weight: 700;
 }
 
-h1, h2, h3, h4, h5, h5 {
-  font-family: #1f3a55;
+.wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
-.jonbecklink {
-  color: #d4a26f;
+.wrapper::before, .wrapper::after {
+  content: '';
+  display: table;
+  zoom: 1;
+}
+
+.wrapper::after {
+  clear: both;
+}
+
+.sectionHeading {
+  color: #1f3a55;
+}
+
+.sectionHeading::after {
+  content: '';
+  width: 16.66667%;
+  min-width: 100px;
+  background-color: #d4a26f;
+  height: 3px;
+  display: block;
+  position: relative;
+  top: 0.2em;
 }
 
 .nav {
@@ -3372,20 +3398,88 @@ h1, h2, h3, h4, h5, h5 {
   font-size: 0.61538em;
 }
 
-.ftWorks {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
+.hero {
+  height: 632px;
+  position: relative;
+  /*
+   * Set a counter and get the length of the image path.
+   */
+  /*
+   * Loop ver the image path and figure out the
+   * position of the dot where the extension begins.
+   */
+  /*
+   * If we were able to figure out where the extension is,
+   * slice the path into a base and an extension. Use that to
+   * calculate urls for different density environments. Set
+   * values for different environments.
+   */
+  /*
+     * Set a base background for 1x environments.
+     */
+  background: url("../img/hero-dt.jpg") left center no-repeat;
+  background-size: 135%;
+  /*
+     * Create an @2x-ish media query.
+     */
+  /*
+     * Create media queries for all environments that the user has
+     * provided images for.
+     */
+  /*
+   * If anything went wrong trying to separate the file from its
+   * extension, set a background value without doing anything to it.
+   */
+  color: #fff;
 }
 
-.ftWorks::before, .ftWorks::after {
-  content: '';
-  display: table;
-  zoom: 1;
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .hero {
+    background: url("../img/hero-dt@2x.jpg") left center no-repeat;
+    background-size: 135%;
+  }
 }
 
-.ftWorks::after {
-  clear: both;
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero {
+    background: url("../img/hero-dt@2x.jpg") left center no-repeat;
+    background-size: 135%;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .hero {
+    background: url("../img/hero-dt@3x.jpg") left center no-repeat;
+    background-size: 135%;
+  }
+}
+
+.hero__content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scrollDownHint {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.intro {
+  background-color: #2e3844;
+  color: #fff;
+}
+
+.jonbecklink {
+  color: #d4a26f;
+  border-bottom: 1px dotted transparent;
+  transition: all .4s ease-in-out;
+}
+
+.jonbecklink:hover {
+  border-bottom: 1px dotted #d4a26f;
 }
 
 .workItem {
@@ -3395,4 +3489,84 @@ h1, h2, h3, h4, h5, h5 {
   padding-right: 15px;
   min-height: 1px;
   float: left;
+}
+
+.footerHeading {
+  color: #ccc;
+}
+
+.footerInfo {
+  list-style: none;
+  margin-bottom: 2em;
+}
+
+.footerInfo__item {
+  color: #ccc;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.3125em;
+  margin-bottom: 0.3em;
+}
+
+.footerInfo__item a {
+  color: #ccc;
+  border-bottom: 1px dotted transparent;
+  transition: all .4s ease-in-out;
+}
+
+.footerInfo__item a:hover {
+  color: #d4a26f;
+  border-bottom: 1px dotted #d4a26f;
+}
+
+.footerBar {
+  font-size: 0.875em;
+  color: #ccc;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.footerBar::before, .footerBar::after {
+  content: '';
+  display: table;
+  zoom: 1;
+}
+
+.footerBar::after {
+  clear: both;
+}
+
+.social {
+  list-style: none;
+}
+
+.social__item {
+  display: inline-block;
+}
+
+.social__btn {
+  width: 3.125em;
+  height: 3.125em;
+  background-color: rgba(26, 26, 26, 0.7);
+  display: table-cell;
+  color: #d4a26f;
+  border-radius: 3.125em;
+  vertical-align: middle;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.social__btn--facebook:hover {
+  background-color: #3b5998;
+}
+
+.social__btn--twitter:hover {
+  background-color: #55acee;
+}
+
+.social__btn--instagram:hover {
+  background-color: #833ab4;
 }

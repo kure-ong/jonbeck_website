@@ -1,3 +1,7 @@
+body {
+  background-color: $color-bg;
+}
+
 main, footer {
 	width: 100%;
   padding-left: $menu-sidebar-width;
@@ -8,8 +12,7 @@ aside {
   position: fixed;
   top: 0;
   left: 0;
-}
-
-section {
-  @include row();
+  height: 100%;
+  background-color: $color-menubg;
+  z-index: 99;
 }

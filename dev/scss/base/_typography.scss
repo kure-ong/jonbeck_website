@@ -12,11 +12,14 @@ main {
 }
 
 footer {
-  font-size: 1rem
+  font-size: 1rem;
+  text-align: center;
 }
 
-h1,h2,h3,h4,h5,h5 {
+h1,h2,h3,h4,h5,h6 {
 	font-family: $font-pri;
+  position: relative;
+  margin-top: 0;
 }
 
 h1 {
@@ -31,6 +34,11 @@ h2 {
 
 h3 {
   font-size: 2.25em;
+  font-weight: 400;
+}
+
+p {
+  line-height: $line-height;
 }
 
 a {
