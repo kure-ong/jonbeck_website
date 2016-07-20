@@ -11,9 +11,40 @@
   transform: translateY(-50%);
 }
 
+.hero__title {
+  margin-bottom: .1em;
+}
+
+.hero__tagline {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: em(24);
+  margin-top: 0;
+  text-align: right;
+  display: block;
+  position: relative;
+  margin-bottom: 2em;
+
+  &:before {
+    content: '';
+    width: 31%;
+    border-bottom: 3px solid #d4a26f;
+    display: inline-block;
+    height: 20px;
+    margin-right: 15px;
+    float: left;
+  }
+}
+
 .scrollDownHint {
   position: absolute;
   bottom: 1%;
   left: 50%;
+  font-size: em(24);
+  color: rgba($color-text-inverse, .5);
   transform: translateX(-50%);
+}
+
+.hero .btn {
+  margin-right: 1em;
 }
