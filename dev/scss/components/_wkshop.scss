@@ -1,0 +1,27 @@
+.wkshopItem {
+  @include col(12);
+}
+
+.wkshopItem__img {
+  width: 35%;
+  height: 290px;
+  display: inline-block;
+}
+
+.wkshopItem__img--tasmania {
+  @include retina('../img/wkshop/tasmania.jpg',3,cover,center center no-repeat);
+}
+
+.wkshopItem__img--ballarat {
+  @include retina('../img/wkshop/ballarat.jpg',3,cover,center center no-repeat);
+}
+
+.wkshopItem__img--seascapes {
+  @include retina('../img/wkshop/seascapes.jpg',3,cover,center center no-repeat);  
+}
+
+.wkshopItem__container {
+  width: 65%;
+  background-color: $color-sec;
+  display: inline-block;
+}
