@@ -1,3 +1,15 @@
+//Turn value into em unit, scaled in reference to given pixel value or default value of 16px
 @function em($pxValue, $rootPx: 16) {
   @return unquote(($pxValue / $rootPx) + 'em');
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
 }

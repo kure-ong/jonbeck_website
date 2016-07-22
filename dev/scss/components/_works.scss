@@ -3,4 +3,80 @@
 
 .workItem {
   @include col(6);
+  margin-bottom: $gutter;
+
+  &:nth-of-type(odd) {
+    padding-left: 0;
+  }
+
+  &:nth-of-type(even) {
+    padding-right: 0;
+  }
+
+}
+
+.workItem__content {
+  position: relative; 
+}
+
+.workItem__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+.workItem__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $color-text-inverse;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-pri, .8);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+.workItem__content:hover .workItem__overlay {
+  opacity: 1;
+}
+
+.workItem__meta {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 94%;
+  height: 90%;
+  border: 2px solid $color-highlight;
+}
+
+.workItem__title {
+  margin-bottom: 0;
+  padding-left: 1rem;
+  padding-top: .7rem;
+}
+
+.workItem__cat {
+  margin: 0;
+  padding-left: 1rem;
+  color: $color-grey;
+}
+
+.workItem__ctrl {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .btn {
+    width: 50%;
+    border: none;
+    border-top: 2px solid $color-highlight;
+
+    &:first-child {
+      border-right: 2px solid $color-highlight;
+    }
+  }
 }
