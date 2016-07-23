@@ -5,9 +5,11 @@ $(function(){
     if (!$('.sidebar').hasClass('sidebar--opened')) {
       $('.sidebar').addClass('sidebar--opened');
       $('.menuhandle').html('Close <i class="fa fa-close"></i>');
+      $('body').append('<div class="menuOverlay"></div>');
     } else {
       $('.sidebar').removeClass('sidebar--opened');
       $('.menuhandle').html('Menu <i class="fa fa-angle-left"></i>');
+      $('.menuOverlay').remove();
     }
   });
 

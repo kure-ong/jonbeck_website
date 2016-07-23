@@ -3783,6 +3783,16 @@ a {
   right: -0.6em;
 }
 
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+}
+
 .sectionHeading {
   color: #1f3a55;
 }
