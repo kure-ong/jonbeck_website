@@ -1,0 +1,21 @@
+.backToTop {
+  $masterDiameter: em(45);
+  
+  width: $masterDiameter;
+  height: $masterDiameter;
+  border-radius: $masterDiameter;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  background-color: $color-backToTop;
+  color: $color-highlight;
+  z-index: 80;
+  transition: opacity 0.3s;
+  
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}

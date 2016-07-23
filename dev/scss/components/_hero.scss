@@ -1,7 +1,7 @@
 .hero {
   height: 632px;
   position: relative;
-  @include retina('../img/hero-dt.jpg',3,135%,left center no-repeat);
+  @include retina('../img/hero-dt.jpg',3,135%,left 70% no-repeat fixed);
   color:$color-text-inverse;
 }
 

@@ -5,6 +5,11 @@
 
 .social__item {
   display: inline-block;
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .social__btn {
@@ -18,17 +23,20 @@
   border-radius: $masterDiameter;
   vertical-align: middle;
   text-align: center;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .social__btn--facebook:hover {
   background-color: $color-facebook;
+  color: $color-text-inverse;
 }
 
 .social__btn--twitter:hover {
   background-color: $color-twitter; 
+  color: $color-text-inverse;
 }
 
 .social__btn--instagram:hover {
   background-color: $color-instagram;
+  color: $color-text-inverse;
 }

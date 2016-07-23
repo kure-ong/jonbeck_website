@@ -1,0 +1,87 @@
+.contactFm {
+  
+  .btn {
+    margin-top: 0;
+  }
+}
+
+.contactFm__item {
+  width: 100%;
+  margin-bottom: em(20);
+  position: relative;
+}
+
+.contactFm__label {
+  position: absolute;
+  top: 0.4em;
+  left: 0.7em;
+}
+
+%label {
+  font-size: em(26);
+  color: $color-grey;
+  font-family: $font-pri;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.contactFm__input.empty + .contactFm__label {
+  @extend %label; 
+}
+
+.contactFm__msg.empty + .contactFm__label {
+  @extend %label;
+}
+
+%labelshrinked {
+  background-color: $color-highlight;
+  min-height: 1.5em;
+  border-radius: 1.5em;
+  font-size: 0.8em;
+  color: $color-text-inverse;
+  padding: 0.1em 0.7em;
+  font-family: $font-sec;
+  font-weight: 400;
+  margin-left: 1em;
+  transform: translateY(-1.2em);
+}
+
+.contactFm__input:focus + .contactFm__label, .contactFm__input:not(.empty) + .contactFm__label {
+  @extend %labelshrinked;
+}
+
+.contactFm__msg:focus + .contactFm__label, .contactFm__msg:not(.empty) + .contactFm__label{
+  @extend %labelshrinked;
+}
+
+%formfield {
+  border:none;
+  padding: 0.5em 0.7em;
+  font-size: em(26);
+  font-family: $font-pri;
+  font-weight: 700;
+  color: $color-pri;
+  width: 100%;
+
+  &:focus {
+    outline:1px solid $color-highlight;
+    outline-offset: 0;
+  }
+}
+
+.contactFm__input {
+  @extend %formfield;
+  height: 2em;
+}
+
+.contactFm__input:not(.empty), .contactFm__msg:not(.empty) {
+  outline:1px solid $color-highlight;
+}
+
+.contactFm__msg {
+  @extend %formfield;
+  resize: none;
+  height: 7.55em;
+}
+

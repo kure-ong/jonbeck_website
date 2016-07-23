@@ -1,3 +1,7 @@
+html, body {
+  min-height: 100%;
+}
+
 body {
   background-color: $color-bg;
 }
@@ -8,7 +12,7 @@ main, footer {
 }
 
 aside {
-	width: $menu-sidebar-width;
+	min-width: $menu-sidebar-width;
   position: fixed;
   top: 0;
   left: 0;

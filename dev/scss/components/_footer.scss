@@ -1,7 +1,10 @@
-
+footer {
+  background: url('../img/shadow.png') top left repeat-x,url('../img/footerbg.jpg') center 20%/cover no-repeat fixed;
+}
 
 .footerHeading {
   color: $color-grey;
+  margin-top: 0.5em;
 }
 
 .footerInfo {

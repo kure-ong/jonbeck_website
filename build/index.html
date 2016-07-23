@@ -6,14 +6,13 @@
 	<title>Jon Beck Photography</title>
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Playfair+Display:400,400i,700,700i" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css" />
 
 </head>
 <body>
-	<aside>
+	<aside class="sidebar">
     <div class="logo">
-      Jon Beck Photography
+      <img src="/img/logo.png" alt="Jon Beck Photography" data-rjs="3" />
     </div>
     <nav class="nav">
       <ul>
@@ -45,13 +44,13 @@
         <li class="nav__item">
           <a href="javascript:void(0)">Contact</a>
         </li>
-        <li class="nav__item">
+        <li class="nav__item nav__search">
           <div class="search"><input class="search__searchfield" type="text" placeholder="Search"/><button class="search__submit" type="submit"><i class="fa fa-search"></i></button></div>
         </li>
       </ul>
     </nav>
     <div class="cart">
-      Cart <i class="fa fa-shopping-cart"></i><div class="badge">0</div>
+      <a href="javascript:void(0)" class="cart__link">Cart</a> <i class="fa fa-shopping-cart"><div class="badge">0</div></i>
     </div>
     <div class="menuhandle">Menu <i class="fa fa-angle-left"></i></div>
   </aside>
@@ -145,44 +144,48 @@
     <section class="wkshopTours">
       <div class="wrapper">
         <h2 class="sectionHeading">Workshop Tours</h2>
-        <div class="wkshopCtrl"><div class="wkshopCtrl__btn"><i class="fa fa-angle-left"></i></div><div class="wkshopCtrl__btn"><i class="fa fa-angle-right"></i></div></div>
-        <div class="wkshopItem">
-          <div alt="Wild Tasmania" class="wkshopItem__img wkshopItem__img--tasmania"></div>
-          <div class="wkshopItem__container">
-            <div class="wkshopItem__meta">
-              <h3 class="wkshopItem__title">Wild Tasmania</h3>
-              <p class="wkshopItem__desc">5 Day Photography Tour</p>
-              <p class="wkshopItem__price">$1,150</p>
-              <p class="wkshopItem__notice">Limited Slots Available</p>
-              <a href="javascript:void(0)" class="btn">Info</a>
+        <div class="wkshopCarouselWrap">
+          <div class="wkshopCtrl"></div>
+          <div class="wkshopCarousel owl-carousel">
+            <div class="wkshopItem">
+              <div alt="Wild Tasmania" class="wkshopItem__img wkshopItem__img--tasmania"></div>
+              <div class="wkshopItem__container">
+                <div class="wkshopItem__meta">
+                  <h3 class="wkshopItem__title">Wild Tasmania</h3>
+                  <p class="wkshopItem__desc">5 Day Photography Tour</p>
+                  <p class="wkshopItem__price">$1,150</p>
+                  <p class="wkshopItem__notice">Limited Slots Available</p>
+                  <a href="javascript:void(0)" class="btn">Info</a>
+                </div>
+              </div>
+            </div>
+            <div class="wkshopItem">
+              <div alt="Character of Ballarat" class="wkshopItem__img wkshopItem__img--ballarat"></div>
+              <div class="wkshopItem__container">
+                <div class="wkshopItem__meta">
+                  <h3 class="wkshopItem__title">Character of Ballarat</h3>
+                  <p class="wkshopItem__desc">5 Day Photography Tour</p>
+                  <p class="wkshopItem__price">$1,150</p>
+                  <p class="wkshopItem__notice">Limited Slots Available</p>
+                  <a href="javascript:void(0)" class="btn">Info</a>
+                </div>
+              </div>
+            </div>
+            <div class="wkshopItem">
+              <div alt="Sydney Seascapes" class="wkshopItem__img wkshopItem__img--seascapes"></div>
+              <div class="wkshopItem__container">
+                <div class="wkshopItem__meta">
+                  <h3 class="wkshopItem__title">Sydney Seascapes</h3>
+                  <p class="wkshopItem__desc">1 Day Photography Tour</p>
+                  <p class="wkshopItem__price"></p>
+                  <p class="wkshopItem__notice">Sold Out</p>
+                  <a href="javascript:void(0)" class="btn">Info</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="wkshopItem">
-          <div alt="Character of Ballarat" class="wkshopItem__img wkshopItem__img--ballarat"></div>
-          <div class="wkshopItem__container">
-            <div class="wkshopItem__meta">
-              <h3 class="wkshopItem__title">Character of Ballarat</h3>
-              <p class="wkshopItem__desc">5 Day Photography Tour</p>
-              <p class="wkshopItem__price">$1,150</p>
-              <p class="wkshopItem__notice">Limited Slots Available</p>
-              <a href="javascript:void(0)" class="btn">Info</a>
-            </div>
-          </div>
-        </div>
-        <div class="wkshopItem">
-          <div alt="Sydney Seascapes" class="wkshopItem__img wkshopItem__img--seascapes"></div>
-          <div class="wkshopItem__container">
-            <div class="wkshopItem__meta">
-              <h3 class="wkshopItem__title">Sydney Seascapes</h3>
-              <p class="wkshopItem__desc">1 Day Photography Tour</p>
-              <p class="wkshopItem__price"></p>
-              <p class="wkshopItem__notice">Sold Out</p>
-              <a href="javascript:void(0)" class="btn">Info</a>
-            </div>
-          </div>
-        </div>
-        <a href="/works" class="btn btn--large">View more workshop tours</a>
+        <a href="javascript:void(0)" class="btn btn--large">View more workshop tours</a>
       </div>
     </section>
 
@@ -190,17 +193,21 @@
       <div class="wrapper">
         <h2 class="sectionHeading">Talk to Jon</h2>
         <form class="contactFm">
-          <div class="contactFm__item">
-            <label>Tell me your name</label><input type="text" />
+          <div class="leftBlock">
+            <div class="contactFm__item">
+              <input type="text" class="contactFm__input empty" /><label class="contactFm__label">Tell me your name</label>
+            </div>
+            <div class="contactFm__item">
+              <input type="email" class="contactFm__input empty" /><label class="contactFm__label">Email</label>
+            </div>
+            <div class="contactFm__item">
+              <input type="tel" class="contactFm__input empty" /><label class="contactFm__label">Contact number</label>
+            </div>
           </div>
-          <div class="contactFm__item">
-            <label>Email</label><input type="text" />
-          </div>
-          <div class="contactFm__item">
-            <label>Contact number</label><input type="text" />
-          </div>
-          <div class="contactFm__item">
-            <label>How can I help you?</label><textarea cols="30" rows="10" class="contactFm__msg"></textarea>
+          <div class="rightBlock">
+            <div class="contactFm__item">
+              <textarea class="contactFm__msg empty"></textarea><label class="contactFm__label">How can I help you?</label>
+            </div>
           </div>
           <button type="submit" href="javascript:void(0)" class="btn btn--large">Submit</button>
         </form>
@@ -238,7 +245,7 @@
     </div>
   </footer>
   
-  <div class="backToTop"><li class="fa fa-angle-up"></li></div>
+  <a class="backToTop"><i class="fa fa-angle-up"></li></div>
   
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script>

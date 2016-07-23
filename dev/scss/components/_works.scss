@@ -13,10 +13,15 @@
     padding-right: 0;
   }
 
+  &:nth-last-of-type(-n+2) {
+    margin-bottom: 0;
+  }
+
 }
 
 .workItem__content {
-  position: relative; 
+  position: relative;
+  box-shadow: 3px 3px 5px rgba($color-sec,.5);
 }
 
 .workItem__img {

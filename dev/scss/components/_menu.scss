@@ -1,0 +1,182 @@
+.sidebar {
+  transition: all 0.6s cubic-bezier(.65,.26,.26,.88);
+  width: $menu-sidebar-width;
+}
+
+.sidebar--opened {
+  width: 40%;
+  min-width: 100px;
+}
+
+.sidebar--opened .nav {
+  width: 100%;
+  opacity: 1;
+}
+
+.menuhandle {
+  position: absolute;
+  top: 50%;
+  right: .7em;
+  font-family: $font-pri;
+  font-weight: 700;
+  font-size: em(21);
+}
+
+.logo {
+  padding-top: 1em;
+  display: table;
+  margin: 0 0 0 0.5em;
+}
+
+.nav {
+  width: $menu-sidebar-width;
+  overflow: hidden;
+  width: 0;
+  transition: all 0.5s cubic-bezier(.65,.26,.26,.88);
+  opacity: 0;
+  height: 75%;
+  font-family: $font-pri;
+  font-weight: 700;
+  position: relative;
+}
+
+.nav ul {
+  padding-left: 0;
+  margin-top: .3em;
+  margin-left: .5em;
+  position: relative;
+  top: 10%;
+}
+
+.nav__item {
+  font-size: em(26);
+  list-style: none;
+  position: relative;
+  margin-bottom: .5em;
+  transition: all .3s;
+  padding: 0;
+
+  a{
+    color: $color-pri;
+    white-space: nowrap;
+  }
+
+  &:not(.nav__search):hover {
+    padding-left: .5em;
+  }
+
+  &:not(.nav__search):hover::after {
+    content: '';
+    display: block;
+    width: .3em;
+    height: .8em;
+    position: absolute;
+    top: 0.22em;
+    left: 0.1em;
+    background-color: $color-highlight;
+  }
+}
+
+.nav__item--active {
+  padding-left: .5em;
+
+  &::after {
+    content: '';
+    display: block;
+    width: .3em;
+    height: .8em;
+    position: absolute;
+    top: 0.22em;
+    left: 0.1em;
+    background-color: $color-highlight;
+  }
+}
+
+.nav__item--hasChild ul {
+  display: none;
+}
+
+.nav__item--child {
+  font-size: em(16,26);
+
+}
+
+.search {
+  position: relative;
+  display: table;
+}
+
+.search__searchfield {
+  border:none;
+  padding: 0.5em 0.7em;
+  font-family: $font-pri;
+  font-weight: 700;
+  color: $color-pri;
+  width: 10em;
+  background-color: #eeeeee;
+
+  &::placeholder {
+    color: #999;
+  }
+
+  &:focus {
+    outline:1px solid $color-highlight;
+    outline-offset: 0;
+  }
+}
+
+.search__submit {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 0.3em;
+  top:50%;
+  transform: translateY(-50%);
+  outline: none;
+  color: #999;
+
+  &:hover {
+    color: $color-highlight;
+  }
+}
+
+.cart {
+  color: $color-pri;
+  font-family: $font-pri;
+  font-weight: 700;
+  font-size: em(21);
+  margin: 0 0 0 0.5em;
+
+  i{
+    position: relative;
+  }
+}
+
+.cart__link {
+  color: $color-pri;
+  border-bottom: 1px dotted transparent;
+  transition: all .4s ease-in-out;
+}
+
+.cart__link:hover {
+  border-bottom: 1px dotted $color-highlight;
+}
+
+.badge {
+  $masterDiameter: 1.2em;
+
+  width: $masterDiameter;
+  height: $masterDiameter;
+  border-radius: $masterDiameter;
+  padding-top: 0.1em;
+  font-family: $font-sec;
+  font-weight: 400;
+  font-size: em(10);
+  color: $color-text;
+  background-color: $color-highlight;
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: -0.6em;
+  right: -0.6em;
+}

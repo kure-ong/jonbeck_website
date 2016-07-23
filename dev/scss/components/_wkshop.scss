@@ -1,11 +1,20 @@
+.wkshopTours {
+  background: url('../img/wkshop_bg.jpg') center center/cover no-repeat fixed;
+
+  .sectionHeading {
+    color: $color-text-inverse
+  }
+}
+
 .wkshopItem {
-  @include col(12);
+  width: 100%;
 }
 
 .wkshopItem__img {
   width: 35%;
-  height: 290px;
+  height: em(290);
   display: inline-block;
+  float: left;
 }
 
 .wkshopItem__img--tasmania {
@@ -20,8 +29,133 @@
   @include retina('../img/wkshop/seascapes.jpg',3,cover,center center no-repeat);  
 }
 
+.wkshopCarouselWrap {
+  position: relative;
+}
+
+.wkshopCtrl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  width: 100%;
+  height: 1px;
+  @include clearfix();
+  opacity: 1;
+
+
+  & .disabled{
+    transition: opacity .5s ease-in-out;
+    opacity: 0;
+  }
+}
+
+.wkshopCtrl__btn {
+  $masterDiameter: 58;
+
+  width: em($masterDiameter);
+  height: em($masterDiameter);
+  border-radius: em($masterDiameter);
+  margin-top: unquote(($masterDiameter / 16) / -2 + 'em');
+  background-color: rgba($color-btn-sec,.75);
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: $color-text-inverse;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgba($color-btn-sec,.95);
+  }
+}
+
+.wkshopCtrl__btn--left {
+  float: left;
+  margin-left: -1em;
+}
+
+.wkshopCtrl__btn--right {
+  float: right;
+  margin-right: -1em;
+}
+
+.wkshopCtrl__arrow {
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: 1em;
+}
+
+.wkshopCtrl__arrow--left {
+  transform: rotate(45deg);
+  margin-left: 24px;
+}
+
+.wkshopCtrl__arrow--right {
+  transform: rotate(225deg);
+  margin-left: 9px;
+}
+
 .wkshopItem__container {
   width: 65%;
+  height: em(290);
   background-color: $color-sec;
   display: inline-block;
+  float: left;
+  color: $color-text-inverse;
+  position: relative;
+  @include clearfix();
+}
+
+.wkshopItem__meta {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 94%;
+  height: 90%;
+  border: 2px solid $color-highlight;
+
+
+  .btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+}
+
+.wkshopItem__title {
+  margin-bottom: 0;
+  padding-left: 2rem;
+  padding-top: .7rem;
+}
+
+.wkshopItem__desc {
+  margin: 0;
+  padding-left: 2rem;
+  color: $color-grey;
+}
+
+.wkshopItem__price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 2.2rem;
+  padding-top: .7rem;
+  font-weight: 400;
+  font-size: em(36);
+  margin: 0;
+}
+
+.wkshopItem__notice {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 2rem;
+  color: $color-highlight;
+  text-transform: uppercase;
 }

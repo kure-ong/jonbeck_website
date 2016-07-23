@@ -5,24 +5,28 @@
 // Tools: Default mixins and functions
 @import "tools/grid";
 @import "tools/calc";
+@import "tools/clearfix";
 // Generic: Ground-zero styles (Normalize.css, resets, box-sizing)
 @import "generic/normalize";
 @import "generic/retina";
 @import "generic/font-awesome/font-awesome";
 @import "generic/box-sizing";
+@import "generic/owl.carousel";
 // Base: Unclassed HTML elements (type selectors)
 @import "base/structure";
 @import "base/typography";
 // Objects: Cosmetic-free design patterns
 @import "objects/wrappers";
 // Components: Designed components, chunks of UI
+@import "components/menu";
 @import "components/headings";
 @import "components/buttons";
-@import "components/navigation";
 @import "components/hero";
 @import "components/intro";
 @import "components/works";
 @import "components/wkshop";
+@import "components/contact";
 @import "components/footer";
 @import "components/social";
+@import "components/backtotop";
 // Trumps: Helpers and overrides
