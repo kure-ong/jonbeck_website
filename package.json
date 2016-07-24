@@ -23,6 +23,7 @@
     "run-sequence": "^1.2.1"
   },
   "dependencies": {
+    "featherlight": "git+https://github.com/noelboss/featherlight.git",
     "jquery": "git://github.com/jquery/jquery.git#1.12.4",
     "normalize.css": "^4.2.0",
     "owl.carousel": "^2.1.4",

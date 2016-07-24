@@ -17,7 +17,7 @@ var browserSync = require('browser-sync').create();
 
 var dev = {
 	styles: ['dev/scss/**/*.+(scss|sass)'],
-	scripts: ['node_modules/retinajs/dist/retina.min.js','node_modules/owl.carousel/dist/owl.carousel.min.js','dev/js/custom.js'],
+	scripts: ['node_modules/retinajs/dist/retina.min.js','node_modules/owl.carousel/dist/owl.carousel.min.js','node_modules/featherlight/release/featherlight.min.js','node_modules/featherlight/release/featherlight.gallery.min.js','dev/js/custom.js'],
 	images: ['dev/img/**/*.+(png|jpg|jpeg|gif|svg)'],
 	fonts: ['dev/fonts/**/*'],
 }
@@ -29,7 +29,9 @@ var jsImports = [
 var sassImports = [
 	'node_modules/normalize.css/normalize.css',
 	'node_modules/retinajs/dist/_retina.scss',
-	'node_modules/owl.carousel/dist/assets/owl.carousel.css'
+	'node_modules/owl.carousel/dist/assets/owl.carousel.css',
+	'node_modules/featherlight/release/featherlight.min.css',
+	'node_modules/featherlight/release/featherlight.gallery.min.css'
 ]
 
 gulp.task('browserSync', function(){

@@ -13,8 +13,11 @@ $(function(){
     }
   });
 
-  $('.nav__item--hasChild').click(function() {
-    $(".nav__item--hasChild ul").slideToggle();
+  $('.nav__item--hasChild').mouseover(function() {
+    $(".nav__item--hasChild ul").stop().slideDown();
+    $('.nav__item--hasChild').mouseleave(function() {
+     $(".nav__item--hasChild ul").stop().slideUp();
+    });
   })
 
   $('.wkshopCarousel').owlCarousel({
