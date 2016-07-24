@@ -2,13 +2,13 @@
 $(function(){
 
   $('.menuhandle').on('click', function() {
-    if (!$('.sidebar').hasClass('sidebar--opened')) {
-      $('.sidebar').addClass('sidebar--opened');
+    if (!$('.sidebar--vert').hasClass('sidebar--opened')) {
+      $('.sidebar--vert').addClass('sidebar--opened');
       $('.menuhandle').html('Close <i class="fa fa-close"></i>');
       $('body').append('<div class="menuOverlay"></div>');
     } else {
-      $('.sidebar').removeClass('sidebar--opened');
-      $('.menuhandle').html('Menu <i class="fa fa-angle-left"></i>');
+      $('.sidebar--vert').removeClass('sidebar--opened');
+      $('.menuhandle').html('Menu <i class="fa fa-angle-left"></i><i class="fa fa-bars"></i>');
       $('.menuOverlay').remove();
     }
   });

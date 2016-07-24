@@ -1,6 +1,5 @@
 .sidebar {
   transition: all 0.6s cubic-bezier(.65,.26,.26,.88);
-  width: $menu-sidebar-width;
 }
 
 .sidebar--opened {
@@ -20,16 +19,34 @@
   font-family: $font-pri;
   font-weight: 700;
   font-size: em(21);
+  color: $color-pri;
+
+  .fa-bars {
+    display: none;
+  }
 }
 
 .logo {
-  padding-top: 1em;
   display: table;
-  margin: 0 0 0 0.5em;
+  margin: 1em 0 0 0.5em;
+  @include retina('../img/logo.png',3,contain, center center no-repeat);
+  width: em(84);
+  height: em(94);
+}
+
+.logo__alt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .nav {
-  width: $menu-sidebar-width;
+  width: $menu-sidebar-space;
   overflow: hidden;
   width: 0;
   transition: all 0.5s cubic-bezier(.65,.26,.26,.88);
@@ -52,7 +69,7 @@
   font-size: em(26);
   list-style: none;
   position: relative;
-  margin-bottom: .5em;
+  margin-bottom: .8em;
   transition: all .3s;
   padding: 0;
 
@@ -65,9 +82,9 @@
     padding-left: .5em;
   }
 
-  &:not(.nav__search):hover::after {
+  &:not(.nav__search):hover::before {
     content: '';
-    display: block;
+    display: table;
     width: .3em;
     height: .8em;
     position: absolute;
@@ -80,9 +97,9 @@
 .nav__item--active {
   padding-left: .5em;
 
-  &::after {
+  &::before {
     content: '';
-    display: block;
+    display: table;
     width: .3em;
     height: .8em;
     position: absolute;
@@ -191,4 +208,85 @@
   height: 100%;
   background-color: rgba(#000,.5);
   z-index: 98;
+}
+
+@media only screen and (max-width:$max-width-tablet){
+    .sidebar--opened {
+      height:100%;
+      width:100%;
+    }
+
+    .sidebar--opened .nav {
+      height: 100%;
+    }
+
+    .menuhandle {
+      position: absolute;
+      top: em(30);
+      right: 5em;
+      font-family: $font-pri;
+      font-weight: 700;
+      font-size: em(21);
+
+      .fa-bars {
+        display: initial;
+      }
+
+      .fa-angle-left {
+        display: none;
+      }
+    }
+
+    .logo {
+      margin: 0 0 0 1em;
+      @include retina('../img/logo-vert.png',3,contain, center center no-repeat);
+      width: em(270);
+      height: $menu-sidebar-space;
+    }
+
+    .nav {
+      text-align: center;
+      width: 100%;
+
+      ul{
+        margin-left: 0;
+      }
+    }
+
+    .nav__item {
+      display: table;
+      margin: 0 auto .8em;
+
+      a:hover {
+          border-bottom: 3px solid $color-highlight;
+      }
+
+      &:not(.nav__search):hover {
+        padding-left: 0;
+      }
+
+      &:not(.nav__search):hover::before {
+        display: none;
+      }
+
+      ul {
+        margin: 0;
+        padding-top: .3em !important;
+      }
+    }
+
+    .nav__item--active {
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .cart {
+      top: 1.875em;
+      right: 1em;
+      left: initial;
+    }
+
 }

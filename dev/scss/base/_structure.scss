@@ -8,15 +8,29 @@ body {
 
 main, footer {
 	width: 100%;
-  padding-left: $menu-sidebar-width;
+  padding-left: $menu-sidebar-space;
 }
 
 aside {
-	min-width: $menu-sidebar-width;
+	min-width: $menu-sidebar-space;
+  width: $menu-sidebar-space;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   background-color: $color-menubg;
   z-index: 99;
+}
+
+@media only screen and (max-width:$max-width-tablet){
+  main, footer {
+  padding-left: initial;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: $menu-sidebar-space;
+  }
+
 }

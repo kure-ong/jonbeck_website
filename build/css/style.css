@@ -3669,12 +3669,24 @@ main, footer {
 
 aside {
   min-width: 100px;
+  width: 100px;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   background-color: #fff;
   z-index: 99;
+}
+
+@media only screen and (max-width: 768px) {
+  main, footer {
+    padding-left: initial;
+  }
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: 100px;
+  }
 }
 
 html {
@@ -3764,7 +3776,6 @@ a {
 
 .sidebar {
   transition: all 0.6s cubic-bezier(0.65, 0.26, 0.26, 0.88);
-  width: 100px;
 }
 
 .sidebar--opened {
@@ -3784,12 +3795,79 @@ a {
   font-family: "Playfair Display", "Times New Roman", serif;
   font-weight: 700;
   font-size: 1.3125em;
+  color: #1f3a55;
+}
+
+.menuhandle .fa-bars {
+  display: none;
 }
 
 .logo {
-  padding-top: 1em;
   display: table;
-  margin: 0 0 0 0.5em;
+  margin: 1em 0 0 0.5em;
+  /*
+   * Set a counter and get the length of the image path.
+   */
+  /*
+   * Loop ver the image path and figure out the
+   * position of the dot where the extension begins.
+   */
+  /*
+   * If we were able to figure out where the extension is,
+   * slice the path into a base and an extension. Use that to
+   * calculate urls for different density environments. Set
+   * values for different environments.
+   */
+  /*
+     * Set a base background for 1x environments.
+     */
+  background: url("../img/logo.png") center center no-repeat;
+  background-size: contain;
+  /*
+     * Create an @2x-ish media query.
+     */
+  /*
+     * Create media queries for all environments that the user has
+     * provided images for.
+     */
+  /*
+   * If anything went wrong trying to separate the file from its
+   * extension, set a background value without doing anything to it.
+   */
+  width: 5.25em;
+  height: 5.875em;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .logo {
+    background: url("../img/logo@2x.png") center center no-repeat;
+    background-size: contain;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    background: url("../img/logo@2x.png") center center no-repeat;
+    background-size: contain;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .logo {
+    background: url("../img/logo@3x.png") center center no-repeat;
+    background-size: contain;
+  }
+}
+
+.logo__alt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .nav {
@@ -3816,7 +3894,7 @@ a {
   font-size: 1.625em;
   list-style: none;
   position: relative;
-  margin-bottom: .5em;
+  margin-bottom: .8em;
   transition: all .3s;
   padding: 0;
 }
@@ -3830,9 +3908,9 @@ a {
   padding-left: .5em;
 }
 
-.nav__item:not(.nav__search):hover::after {
+.nav__item:not(.nav__search):hover::before {
   content: '';
-  display: block;
+  display: table;
   width: .3em;
   height: .8em;
   position: absolute;
@@ -3845,9 +3923,9 @@ a {
   padding-left: .5em;
 }
 
-.nav__item--active::after {
+.nav__item--active::before {
   content: '';
-  display: block;
+  display: table;
   width: .3em;
   height: .8em;
   position: absolute;
@@ -3964,6 +4042,116 @@ a {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 98;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar--opened {
+    height: 100%;
+    width: 100%;
+  }
+  .sidebar--opened .nav {
+    height: 100%;
+  }
+  .menuhandle {
+    position: absolute;
+    top: 1.875em;
+    right: 5em;
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 1.3125em;
+  }
+  .menuhandle .fa-bars {
+    display: initial;
+  }
+  .menuhandle .fa-angle-left {
+    display: none;
+  }
+  .logo {
+    margin: 0 0 0 1em;
+    /*
+   * Set a counter and get the length of the image path.
+   */
+    /*
+   * Loop ver the image path and figure out the
+   * position of the dot where the extension begins.
+   */
+    /*
+   * If we were able to figure out where the extension is,
+   * slice the path into a base and an extension. Use that to
+   * calculate urls for different density environments. Set
+   * values for different environments.
+   */
+    /*
+     * Set a base background for 1x environments.
+     */
+    background: url("../img/logo-vert.png") center center no-repeat;
+    background-size: contain;
+    /*
+     * Create an @2x-ish media query.
+     */
+    /*
+     * Create media queries for all environments that the user has
+     * provided images for.
+     */
+    /*
+   * If anything went wrong trying to separate the file from its
+   * extension, set a background value without doing anything to it.
+   */
+    width: 16.875em;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 768px) and (min-resolution: 192dpi) {
+  .logo {
+    background: url("../img/logo-vert@2x.png") center center no-repeat;
+    background-size: contain;
+  }
+}
+
+@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 768px) and (min-resolution: 288dpi) {
+  .logo {
+    background: url("../img/logo-vert@3x.png") center center no-repeat;
+    background-size: contain;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    text-align: center;
+    width: 100%;
+  }
+  .nav ul {
+    margin-left: 0;
+  }
+  .nav__item {
+    display: table;
+    margin: 0 auto .8em;
+  }
+  .nav__item a:hover {
+    border-bottom: 3px solid #d4a26f;
+  }
+  .nav__item:not(.nav__search):hover {
+    padding-left: 0;
+  }
+  .nav__item:not(.nav__search):hover::before {
+    display: none;
+  }
+  .nav__item ul {
+    margin: 0;
+    padding-top: .3em !important;
+  }
+  .nav__item--active {
+    padding: 0;
+  }
+  .nav__item--active::before {
+    display: none;
+  }
+  .cart {
+    top: 1.875em;
+    right: 1em;
+    left: initial;
+  }
 }
 
 .sectionHeading {
