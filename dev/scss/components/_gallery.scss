@@ -1,0 +1,71 @@
+.featherlight-content {
+  background-color: $color-sec !important;
+  overflow: visible !important;
+  box-shadow: 0 0 0 2px $color-highlight;
+}
+
+.featherlight-content .caption {
+  font-size: 3em;
+  font-family: $font-pri;
+  color: $color-text-inverse;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.featherlight-content img {
+  width: 100% !important;
+  max-width: 960px;
+  height: auto !important;
+}
+
+%circle {
+  $masterDiameter: 4em;
+
+  width: $masterDiameter;
+  height: $masterDiameter;
+  border-radius: $masterDiameter;
+  background-color: rgba($color-btn-sec, .3);
+  top: 50%;
+  transition: background-color .3s ease;
+}
+
+.featherlight-previous {
+  @extend %circle;
+  left: 0;
+  right: initial;
+  transform: translateX(-20%);
+
+  * {
+    display: inline-block !important;
+  }
+
+}
+
+.featherlight-next {
+  @extend %circle;
+  right:0;
+  left: initial;
+  transform: translateX(20%);
+
+  * {
+    display: inline-block !important;
+  }
+}
+
+.featherlight-next span, .featherlight-previous span {
+  color: $color-text-inverse;
+  text-shadow: none;
+  margin-top: 0 !important;
+  transform: translateY(-50%);
+}
+
+.featherlight-next:hover, .featherlight-previous:hover {
+  background-color: rgba($color-btn-sec, .8);
+}
+
+@media only screen and (max-width: $max-width-mobile) {
+  .featherlight-content .caption {
+    font-size: 1.8em;
+  }
+}

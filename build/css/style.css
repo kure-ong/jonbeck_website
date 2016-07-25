@@ -3656,6 +3656,7 @@ html {
 
 html, body {
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -3682,10 +3683,22 @@ aside {
   main, footer {
     padding-left: initial;
   }
-  .sidebar {
+  aside {
     width: 100%;
     min-width: 100%;
     height: 100px;
+  }
+  main {
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  aside {
+    height: 150px;
+  }
+  main {
+    margin-top: 150px;
   }
 }
 
@@ -3745,6 +3758,7 @@ a {
   padding-right: 10px;
   padding-top: 2em;
   padding-bottom: 2em;
+  height: 100%;
 }
 
 .wrapper::before, .wrapper::after {
@@ -3774,13 +3788,25 @@ a {
   padding-right: 0;
 }
 
+@media only screen and (max-width: 480px) {
+  .leftBlock, .rightBlock {
+    width: 100%;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 1px;
+    float: left;
+    padding: 0;
+  }
+}
+
 .sidebar {
   transition: all 0.6s cubic-bezier(0.65, 0.26, 0.26, 0.88);
 }
 
 .sidebar--opened {
   width: 40%;
-  min-width: 100px;
+  min-width: 25em;
 }
 
 .sidebar--opened .nav {
@@ -4046,8 +4072,9 @@ a {
 
 @media only screen and (max-width: 768px) {
   .sidebar--opened {
-    height: 100%;
+    height: 100% !important;
     width: 100%;
+    min-width: 0;
   }
   .sidebar--opened .nav {
     height: 100%;
@@ -4154,6 +4181,87 @@ a {
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .logo {
+    display: table;
+    margin: 0 auto 1em;
+    transition: all 0.3s ease;
+  }
+  .menuhandle {
+    top: 4.875em;
+    right: initial;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+  }
+  .cart {
+    top: 4.875em;
+    transition: all 0.3s ease;
+  }
+  .cart__text {
+    display: none;
+  }
+  .sidebar--minimized {
+    height: 100px;
+  }
+  .sidebar--minimized .logo {
+    /*
+   * Set a counter and get the length of the image path.
+   */
+    /*
+   * Loop ver the image path and figure out the
+   * position of the dot where the extension begins.
+   */
+    /*
+   * If we were able to figure out where the extension is,
+   * slice the path into a base and an extension. Use that to
+   * calculate urls for different density environments. Set
+   * values for different environments.
+   */
+    /*
+     * Set a base background for 1x environments.
+     */
+    background: url("../img/logoemblem.png") center center no-repeat;
+    background-size: contain;
+    /*
+     * Create an @2x-ish media query.
+     */
+    /*
+     * Create media queries for all environments that the user has
+     * provided images for.
+     */
+    /*
+   * If anything went wrong trying to separate the file from its
+   * extension, set a background value without doing anything to it.
+   */
+    width: 4.2em;
+    margin: 0 1em 1em;
+  }
+}
+
+@media only screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 480px) and (min-resolution: 192dpi) {
+  .sidebar--minimized .logo {
+    background: url("../img/logoemblem@2x.png") center center no-repeat;
+    background-size: contain;
+  }
+}
+
+@media only screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 480px) and (min-resolution: 288dpi) {
+  .sidebar--minimized .logo {
+    background: url("../img/logoemblem@3x.png") center center no-repeat;
+    background-size: contain;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sidebar--minimized .menuhandle {
+    top: 1.875em;
+  }
+  .sidebar--minimized .cart {
+    top: 1.875em;
+  }
+}
+
 .sectionHeading {
   color: #1f3a55;
 }
@@ -4214,6 +4322,12 @@ a {
   clear: both;
 }
 
+@media only screen and (max-width: 480px) {
+  .btn__text--mobhide {
+    display: none;
+  }
+}
+
 .hero {
   height: 632px;
   position: relative;
@@ -4233,8 +4347,8 @@ a {
   /*
      * Set a base background for 1x environments.
      */
-  background: url("../img/hero-dt.jpg") left 70% no-repeat fixed;
-  background-size: 135%;
+  background: url("../img/hero-dt.jpg") center center no-repeat;
+  background-size: cover;
   /*
      * Create an @2x-ish media query.
      */
@@ -4247,33 +4361,36 @@ a {
    * extension, set a background value without doing anything to it.
    */
   color: #fff;
+  overflow: hidden;
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
   .hero {
-    background: url("../img/hero-dt@2x.jpg") left 70% no-repeat fixed;
-    background-size: 135%;
+    background: url("../img/hero-dt@2x.jpg") center center no-repeat;
+    background-size: cover;
   }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .hero {
-    background: url("../img/hero-dt@2x.jpg") left 70% no-repeat fixed;
-    background-size: 135%;
+    background: url("../img/hero-dt@2x.jpg") center center no-repeat;
+    background-size: cover;
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
-  .hero {
-    background: url("../img/hero-dt@3x.jpg") left 70% no-repeat fixed;
-    background-size: 135%;
-  }
+.hero .btn {
+  margin-right: 1em;
+}
+
+.hero .btn:last-child {
+  margin-right: 0;
 }
 
 .hero__content {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 2;
 }
 
 .hero__title {
@@ -4285,7 +4402,7 @@ a {
   text-transform: uppercase;
   font-size: 1.5em;
   margin-top: 0;
-  text-align: right;
+  text-align: left;
   display: block;
   position: relative;
   margin-bottom: 2em;
@@ -4296,9 +4413,23 @@ a {
   width: 31%;
   border-bottom: 3px solid #d4a26f;
   display: inline-block;
-  height: 20px;
+  height: .85em;
   margin-right: 15px;
   float: left;
+}
+
+@keyframes levitate {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  30% {
+    opacity: .7;
+  }
+  100% {
+    transform: translate(-50%, 0%);
+    opacity: 0;
+  }
 }
 
 .scrollDownHint {
@@ -4307,11 +4438,197 @@ a {
   left: 50%;
   font-size: 1.5em;
   color: rgba(255, 255, 255, 0.5);
-  transform: translateX(-50%);
+  animation: levitate 2s infinite;
+  z-index: 3;
 }
 
-.hero .btn {
-  margin-right: 1em;
+.hero--works {
+  height: 300px;
+  background: url("../img/works/l9.jpg") center center/cover no-repeat fixed !important;
+}
+
+.hero--about {
+  height: 300px;
+  background: url("../img/jb.jpg") center 20%/cover no-repeat !important;
+}
+
+.hero--about .hero__title {
+  color: #1f3a55;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    /*
+   * Set a counter and get the length of the image path.
+   */
+    /*
+   * Loop ver the image path and figure out the
+   * position of the dot where the extension begins.
+   */
+    /*
+   * If we were able to figure out where the extension is,
+   * slice the path into a base and an extension. Use that to
+   * calculate urls for different density environments. Set
+   * values for different environments.
+   */
+    /*
+     * Set a base background for 1x environments.
+     */
+    background: url("../img/hero-t.jpg") center top no-repeat fixed;
+    background-size: cover;
+    /*
+     * Create an @2x-ish media query.
+     */
+    /*
+     * Create media queries for all environments that the user has
+     * provided images for.
+     */
+    /*
+   * If anything went wrong trying to separate the file from its
+   * extension, set a background value without doing anything to it.
+   */
+  }
+}
+
+@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 768px) and (min-resolution: 192dpi) {
+  .hero {
+    background: url("../img/hero-t@2x.jpg") center top no-repeat fixed;
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 768px) and (min-resolution: 288dpi) {
+  .hero {
+    background: url("../img/hero-t@3x.jpg") center top no-repeat fixed;
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero .btn {
+    float: none;
+  }
+  .hero__bgOverlay {
+    background-image: linear-gradient(to bottom, rgba(31, 58, 85, 0) 0%, rgba(31, 58, 85, 0.7) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero__content {
+    font-size: 0.9rem;
+    position: relative;
+    margin: 0 auto;
+    transform: translateY(35%);
+    display: table;
+    text-align: center;
+  }
+  .hero__tagline {
+    text-align: center;
+  }
+  .hero__tagline span {
+    display: inline-block;
+  }
+  .hero--works {
+    height: 300px;
+    background: url("../img/works/l9.jpg") center bottom/cover no-repeat fixed !important;
+  }
+  .hero--about {
+    background: url("../img/jb.jpg") 63% center/cover no-repeat fixed !important;
+  }
+  .hero--about .hero__title {
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero {
+    height: 662px;
+    /*
+   * Set a counter and get the length of the image path.
+   */
+    /*
+   * Loop ver the image path and figure out the
+   * position of the dot where the extension begins.
+   */
+    /*
+   * If we were able to figure out where the extension is,
+   * slice the path into a base and an extension. Use that to
+   * calculate urls for different density environments. Set
+   * values for different environments.
+   */
+    /*
+     * Set a base background for 1x environments.
+     */
+    background: url("../img/hero-m.jpg") center top no-repeat fixed;
+    background-size: cover;
+    /*
+     * Create an @2x-ish media query.
+     */
+    /*
+     * Create media queries for all environments that the user has
+     * provided images for.
+     */
+    /*
+   * If anything went wrong trying to separate the file from its
+   * extension, set a background value without doing anything to it.
+   */
+  }
+}
+
+@media only screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 480px) and (min-resolution: 192dpi) {
+  .hero {
+    background: url("../img/hero-m@2x.jpg") center top no-repeat fixed;
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 3), only screen and (max-width: 480px) and (min-resolution: 288dpi) {
+  .hero {
+    background: url("../img/hero-m@3x.jpg") center top no-repeat fixed;
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero .wrapper {
+    padding-bottom: 0;
+  }
+  .hero .btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: .7em;
+  }
+  .hero__bgOverlay {
+    background-image: linear-gradient(to top, rgba(31, 58, 85, 0) 0%, rgba(31, 58, 85, 0.7) 58%);
+  }
+  .hero__content {
+    width: 100%;
+    font-size: 0.85rem;
+    margin: 0;
+    transform: translateY(0);
+    top: 1em;
+    text-align: left;
+  }
+  .hero__title {
+    margin-bottom: .1em;
+  }
+  .hero__tagline {
+    text-align: left;
+  }
+  .hero__tagline:before {
+    content: '';
+    width: 31%;
+    border-bottom: 3px solid #d4a26f;
+    display: block;
+    height: 0;
+    margin: 0.3em 15px 0.3em 0;
+    float: left;
+  }
+  .hero--about {
+    background: url("../img/jb.jpg") 63% center/cover no-repeat !important;
+  }
 }
 
 .intro {
@@ -4327,6 +4644,12 @@ a {
 
 .jonbecklink:hover {
   border-bottom: 1px dotted #d4a26f;
+}
+
+@media only screen and (max-width: 480px) {
+  .intro {
+    display: none;
+  }
 }
 
 .workItem {
@@ -4416,6 +4739,24 @@ a {
 
 .workItem__ctrl .btn:first-child {
   border-right: 2px solid #d4a26f;
+}
+
+@media only screen and (max-width: 480px) {
+  .workItem {
+    width: 100%;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 1px;
+    float: left;
+    padding: 0;
+  }
+  .workItem:nth-last-of-type(n+2) {
+    margin-bottom: 20px;
+  }
+  .workItem__ctrl {
+    font-size: 1.2em;
+  }
 }
 
 .wkshopTours {
@@ -4717,7 +5058,7 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  padding-right: 2.2rem;
+  padding-right: 2rem;
   padding-top: .7rem;
   font-weight: 400;
   font-size: 2.25em;
@@ -4731,6 +5072,61 @@ a {
   padding-left: 2rem;
   color: #d4a26f;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  .wkshopItem__meta {
+    font-size: .85em;
+  }
+  .wkshopItem__title {
+    width: 70%;
+    padding-left: 1.3rem;
+  }
+  .wkshopItem__desc {
+    padding-left: 1.3rem;
+  }
+  .wkshopItem__price {
+    padding-right: 1.3rem;
+  }
+  .wkshopItem__notice {
+    padding-left: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .wkshopItem__img {
+    float: none;
+    display: block;
+    width: 100%;
+  }
+  .wkshopItem__container {
+    float: none;
+    display: block;
+    width: 100%;
+    height: 20em;
+  }
+  .wkshopItem__meta {
+    font-size: .9em;
+  }
+  .wkshopItem__meta .btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    width: 100%;
+  }
+  .wkshopItem__title {
+    width: 100%;
+  }
+  .wkshopItem__price {
+    position: relative;
+    padding-left: 1.3rem;
+    padding-top: .8em;
+    padding-bottom: .6em;
+  }
+  .wkshopItem__notice {
+    bottom: 3.6em;
+  }
 }
 
 .contactFm .btn {
@@ -4912,4 +5308,121 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.featherlight-content {
+  background-color: #2e3844 !important;
+  overflow: visible !important;
+  box-shadow: 0 0 0 2px #d4a26f;
+}
+
+.featherlight-content .caption {
+  font-size: 3em;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  color: #fff;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.featherlight-content img {
+  width: 100% !important;
+  max-width: 960px;
+  height: auto !important;
+}
+
+.featherlight-previous, .featherlight-next {
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
+  background-color: rgba(85, 96, 102, 0.3);
+  top: 50%;
+  transition: background-color .3s ease;
+}
+
+.featherlight-previous {
+  left: 0;
+  right: initial;
+  transform: translateX(-20%);
+}
+
+.featherlight-previous * {
+  display: inline-block !important;
+}
+
+.featherlight-next {
+  right: 0;
+  left: initial;
+  transform: translateX(20%);
+}
+
+.featherlight-next * {
+  display: inline-block !important;
+}
+
+.featherlight-next span, .featherlight-previous span {
+  color: #fff;
+  text-shadow: none;
+  margin-top: 0 !important;
+  transform: translateY(-50%);
+}
+
+.featherlight-next:hover, .featherlight-previous:hover {
+  background-color: rgba(85, 96, 102, 0.8);
+}
+
+@media only screen and (max-width: 480px) {
+  .featherlight-content .caption {
+    font-size: 1.8em;
+  }
+}
+
+.about {
+  color: #1f3a55;
+  line-height: 1.66;
+}
+
+.textBlock {
+  width: 100%;
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 1px;
+  float: left;
+  font-size: 1.2em;
+  text-align: justify;
+}
+
+.quote {
+  background-color: #2e3844;
+  color: #fff;
+  display: block;
+  padding: .2em 1em;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  width: 40%;
+  font-size: .9em;
+  text-align: justify;
+  float: left;
+}
+
+.quote p {
+  border: 2px solid #d4a26f;
+  padding: 1em;
+  line-height: 1.66;
+}
+
+@media only screen and (max-width: 768px) {
+  .quote {
+    float: none;
+    width: 80%;
+    display: table;
+    margin: 0 auto;
+    margin-top: 1.3em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .quote {
+    width: 100%;
+  }
 }

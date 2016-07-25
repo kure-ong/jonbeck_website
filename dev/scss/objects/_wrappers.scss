@@ -2,6 +2,7 @@
   @include row();
   padding-top: 2em; 
   padding-bottom: 2em;
+  height: 100%;
 }
 
 .leftBlock, .rightBlock {
@@ -14,4 +15,11 @@
 
 .rightBlock {
   padding-right: 0;
+}
+
+@media only screen and (max-width: $max-width-mobile) {
+  .leftBlock, .rightBlock {
+    @include col(12);
+    padding: 0;
+  }
 }

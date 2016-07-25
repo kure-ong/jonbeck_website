@@ -10,20 +10,22 @@
 
 </head>
 <body>
-	<aside class="sidebar sidebar--vert">
-    <div class="logo">
-      <span class="logo__alt">Jon Beck Photography</span>
-    </div>
+	<aside class="sidebar">
+    <a href="index.html">
+      <div class="logo">
+        <span class="logo__alt">Jon Beck Photography</span>
+      </div>
+    </a>
     <nav class="nav">
       <ul>
         <li class="nav__item nav__item--active">
-          <a href="javascript:void(0)">Home</a>
+          <a href="index.html">Home</a>
         </li>
         <li class="nav__item">
-          <a href="javascript:void(0)">About</a>
+          <a href="about.html">About</a>
         </li>
         <li class="nav__item nav__item--hasChild">
-          <a href="javascript:void(0)">Works</a>
+          <a href="works.html">Works</a>
           <ul>
             <li class="nav__item nav__item--child">
               <a href="javascript:void(0)">Actor Portrait</a></li>
@@ -50,7 +52,9 @@
       </ul>
     </nav>
     <div class="cart">
-      <a href="javascript:void(0)" class="cart__link">Cart</a> <i class="fa fa-shopping-cart"><div class="badge">0</div></i>
+      <a href="javascript:void(0)" class="cart__link">
+        <span class="cart__text">Cart</span><i class="fa fa-shopping-cart"><div class="badge">0</div></i>
+      </a> 
     </div>
     <div class="menuhandle">Menu <i class="fa fa-angle-left"></i><i class="fa fa-bars"></i></div>
   </aside>
@@ -59,17 +63,18 @@
     <section class="hero">
       <div class="wrapper">
         <div class="hero__content">
-          <h1 class="hero__title">Jon Beck Photography</h1>
-          <p class="hero__tagline">Bringing your vision into light</p>
-          <a href="/works" class="btn">See his works</a><a href="#contact" class="btn">Talk to Jon</a>
+          <h1 class="hero__title">&nbsp;Jon Beck Photography</h1>
+          <p class="hero__tagline"><span>Bringing your vision into light</span></p>
+          <a href="works.html" class="btn">See his works</a><a href="#contact" class="btn">Talk to Jon</a>
         </div>
         <i class="fa fa-angle-double-down scrollDownHint"></i>
+        <div class="hero__bgOverlay"></div>
       </div>
     </section>
 
     <section class="intro">
       <div class="wrapper">
-        <p><a href="/about" class="jonbecklink">Jon Beck</a> is an international award winning photographer, specializing in fine art, actor portraits, landscape and building photography.</p>
+        <p><a href="about.html" class="jonbecklink">Jon Beck</a> is an international award winning photographer, specializing in fine art, actor portraits, landscape and building photography.</p>
         <p>Jon’s approach to his work is one of <strong>no compromise</strong>, from image capture, printing and framing he uses only the finest quality materials available.</p>
       </div>
     </section>
@@ -79,14 +84,14 @@
         <h2 class="sectionHeading">Featured Works</h2>
         <div class="workItem">
           <div class="workItem__content">
-            <img src="/img/works/ap2_thumb.jpg" alt="Alex's Dad" class="workItem__img" data-rjs="2" />
+            <img src="img/works/ap2_thumb.jpg" alt="Alex's Dad" class="workItem__img" data-rjs="2" />
             <div class="workItem__overlay">
               <div class="workItem__meta">
                 <h3 class="workItem__title">Alex's Dad</h3>
                 <p class="workItem__cat">Actor Portraits</p>
                 <div class="workItem__ctrl">
-                  <a href="javascript:void(0)" data-featherlight="img/works/ap2.png" class="btn btn--lightTxt">View <i class="fa fa-eye"></i></a>
-                  <a href="javascript:void(0)" class="btn btn--lightTxt">Add <i class="fa fa-cart-plus"></i></a>
+                  <a href="javascript:void(0)" data-featherlight="img/works/ap2.png" class="btn"><span class="btn__text--mobhide">View</span> <i class="fa fa-eye"></i></a>
+                  <a href="javascript:void(0)" class="btn"><span class="btn__text--mobhide">Add</span> <i class="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -94,14 +99,14 @@
         </div>
         <div class="workItem">
           <div class="workItem__content">
-            <img src="/img/works/b1_thumb.jpg" alt="SemiCircle" class="workItem__img" data-rjs="2" />
+            <img src="img/works/b1_thumb.jpg" alt="SemiCircle" class="workItem__img" data-rjs="2" />
             <div class="workItem__overlay">
               <div class="workItem__meta">
                 <h3 class="workItem__title">SemiCircle</h3>
                 <p class="workItem__cat">Buildings</p>
                 <div class="workItem__ctrl">
-                  <a href="javascript:void(0)" data-featherlight="img/works/b1.jpg" class="btn btn--lightTxt">View <i class="fa fa-eye"></i></a>
-                  <a href="javascript:void(0)" class="btn btn--lightTxt">Add <i class="fa fa-cart-plus"></i></a>
+                  <a href="javascript:void(0)" data-featherlight="img/works/b1.jpg" class="btn"><span class="btn__text--mobhide">View</span> <i class="fa fa-eye"></i></a>
+                  <a href="javascript:void(0)" class="btn"><span class="btn__text--mobhide">Add</span> <i class="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -109,14 +114,14 @@
         </div>
         <div class="workItem">
           <div class="workItem__content">
-            <img src="/img/works/l9_thumb.jpg" alt="Ice Mountain" class="workItem__img" data-rjs="2" />
+            <img src="img/works/l9_thumb.jpg" alt="Ice Mountain" class="workItem__img" data-rjs="2" />
             <div class="workItem__overlay">
               <div class="workItem__meta">
                 <h3 class="workItem__title">Ice Mountain</h3>
                 <p class="workItem__cat">Landscape</p>
                 <div class="workItem__ctrl">
-                  <a href="javascript:void(0)" data-featherlight="img/works/l9.jpg" class="btn btn--lightTxt">View <i class="fa fa-eye"></i></a>
-                  <a href="javascript:void(0)" class="btn btn--lightTxt">Add <i class="fa fa-cart-plus"></i></a>
+                  <a href="javascript:void(0)" data-featherlight="img/works/l9.jpg" class="btn"><span class="btn__text--mobhide">View</span> <i class="fa fa-eye"></i></a>
+                  <a href="javascript:void(0)" class="btn"><span class="btn__text--mobhide">Add</span> <i class="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -124,20 +129,20 @@
         </div>
         <div class="workItem">
           <div class="workItem__content">
-            <img src="/img/works/s19_thumb.jpg" alt="Intense Lady" class="workItem__img" data-rjs="2" />
+            <img src="img/works/s19_thumb.jpg" alt="Intense Lady" class="workItem__img" data-rjs="2" />
             <div class="workItem__overlay">
               <div class="workItem__meta">
                 <h3 class="workItem__title">Intense Lady</h3>
                 <p class="workItem__cat">Street</p>
                 <div class="workItem__ctrl">
-                  <a href="javascript:void(0)" data-featherlight="img/works/s19.jpg" class="btn btn--lightTxt">View <i class="fa fa-eye"></i></a>
-                  <a href="javascript:void(0)" class="btn btn--lightTxt">Add <i class="fa fa-cart-plus"></i></a>
+                  <a href="javascript:void(0)" data-featherlight="img/works/s19.jpg" class="btn"><span class="btn__text--mobhide">View</span> <i class="fa fa-eye"></i></a>
+                  <a href="javascript:void(0)" class="btn"><span class="btn__text--mobhide">Add</span> <i class="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <a href="/works" class="btn btn--large">View more photos</a>
+        <a href="works.html" class="btn btn--large">View more photos</a>
       </div>
     </section>
 

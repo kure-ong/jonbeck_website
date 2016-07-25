@@ -1,0 +1,44 @@
+.about {
+  color: $color-text;
+  line-height: 1.66;
+}
+
+.textBlock {
+  @include col(12);
+  font-size: 1.2em;
+  text-align: justify;
+}
+
+.quote {
+  background-color: $color-sec;
+  color: $color-text-inverse;
+  display: block;
+  padding: .2em 1em;
+  font-family: $font-pri;
+  width: 40%;
+  font-size: .9em;
+  text-align: justify;
+  float: left;
+
+  p{
+    border: 2px solid $color-highlight;
+    padding: 1em;
+    line-height: 1.66;
+  }
+}
+
+@media only screen and (max-width: $max-width-tablet) {
+  .quote {
+    float: none;
+    width: 80%;
+    display: table;
+    margin: 0 auto;
+    margin-top: 1.3em;
+  }
+}
+
+@media only screen and (max-width: $max-width-mobile) {
+  .quote {
+    width: 100%;
+  }
+}

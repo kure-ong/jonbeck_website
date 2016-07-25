@@ -28,3 +28,9 @@
   @include row();
   margin-top: em(20);
 }
+
+@media only screen and (max-width: $max-width-mobile) {
+  .btn__text--mobhide {
+    display: none;
+  }
+}
