@@ -47,13 +47,13 @@
           <a href="javascript:void(0)">Contact</a>
         </li>
         <li class="nav__item nav__search">
-          <div class="search"><input class="search__searchfield" type="text" placeholder="Search"/><button class="search__submit" type="submit"><i class="fa fa-search"></i></button></div>
+          <div class="search"><input class="search__searchfield" type="text" placeholder="Search" title="search" name="search" id="search" /><button class="search__submit" type="submit"><i class="fa fa-search"></i></button></div>
         </li>
       </ul>
     </nav>
     <div class="cart">
       <a href="javascript:void(0)" class="cart__link">
-        <span class="cart__text">Cart</span><i class="fa fa-shopping-cart"><div class="badge">0</div></i>
+        <span class="cart__text">Cart</span><i class="fa fa-shopping-cart"></i><div class="badge">0</div>
       </a> 
     </div>
     <div class="menuhandle">Menu <i class="fa fa-angle-left"></i><i class="fa fa-bars"></i></div>
@@ -74,6 +74,7 @@
 
     <section class="intro">
       <div class="wrapper">
+      <h2 class="intro__title">About Jon</h2>
         <p><a href="about.html" class="jonbecklink">Jon Beck</a> is an international award winning photographer, specializing in fine art, actor portraits, landscape and building photography.</p>
         <p>Jon’s approach to his work is one of <strong>no compromise</strong>, from image capture, printing and framing he uses only the finest quality materials available.</p>
       </div>
@@ -153,7 +154,7 @@
           <div class="wkshopCtrl"></div>
           <div class="wkshopCarousel owl-carousel">
             <div class="wkshopItem">
-              <div alt="Wild Tasmania" class="wkshopItem__img wkshopItem__img--tasmania"></div>
+              <div title="Wild Tasmania" class="wkshopItem__img wkshopItem__img--tasmania"></div>
               <div class="wkshopItem__container">
                 <div class="wkshopItem__meta">
                   <h3 class="wkshopItem__title">Wild Tasmania</h3>
@@ -165,7 +166,7 @@
               </div>
             </div>
             <div class="wkshopItem">
-              <div alt="Character of Ballarat" class="wkshopItem__img wkshopItem__img--ballarat"></div>
+              <div title="Character of Ballarat" class="wkshopItem__img wkshopItem__img--ballarat"></div>
               <div class="wkshopItem__container">
                 <div class="wkshopItem__meta">
                   <h3 class="wkshopItem__title">Character of Ballarat</h3>
@@ -177,7 +178,7 @@
               </div>
             </div>
             <div class="wkshopItem">
-              <div alt="Sydney Seascapes" class="wkshopItem__img wkshopItem__img--seascapes"></div>
+              <div title="Sydney Seascapes" class="wkshopItem__img wkshopItem__img--seascapes"></div>
               <div class="wkshopItem__container">
                 <div class="wkshopItem__meta">
                   <h3 class="wkshopItem__title">Sydney Seascapes</h3>
@@ -200,21 +201,21 @@
         <form class="contactFm">
           <div class="leftBlock">
             <div class="contactFm__item">
-              <input type="text" class="contactFm__input empty" /><label class="contactFm__label">Tell me your name</label>
+              <input type="text" name="name" id="cf-name" class="contactFm__input empty" /><label for="cf-name" class="contactFm__label">Tell me your name</label>
             </div>
             <div class="contactFm__item">
-              <input type="email" class="contactFm__input empty" /><label class="contactFm__label">Email</label>
+              <input type="email" name="email" id="cf-email" class="contactFm__input empty" /><label for="cf-email" class="contactFm__label">Email</label>
             </div>
             <div class="contactFm__item">
-              <input type="tel" class="contactFm__input empty" /><label class="contactFm__label">Contact number</label>
+              <input type="tel" name="contact" id="cf-contact" class="contactFm__input empty" /><label for="cf-contact" class="contactFm__label">Contact number</label>
             </div>
           </div>
           <div class="rightBlock">
             <div class="contactFm__item">
-              <textarea class="contactFm__msg empty"></textarea><label class="contactFm__label">How can I help you?</label>
+              <textarea name="message" id="cf-message" class="contactFm__msg empty"></textarea><label for="cf-message" class="contactFm__label">How can I help you?</label>
             </div>
           </div>
-          <button type="submit" href="javascript:void(0)" class="btn btn--large">Submit</button>
+          <button type="submit" class="btn btn--large">Submit</button>
         </form>
       </div>
     </section>
@@ -250,7 +251,7 @@
     </div>
   </footer>
   
-  <a class="backToTop"><i class="fa fa-angle-up"></li></div>
+  <a class="backToTop"><i class="fa fa-angle-up"></i></a>
   
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script>

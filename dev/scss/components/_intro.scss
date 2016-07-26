@@ -3,6 +3,10 @@
   color: $color-text-inverse;
 }
 
+.intro__title {
+  display: none;
+}
+
 .jonbecklink {
   color: $color-highlight;
   border-bottom: 1px dotted transparent;

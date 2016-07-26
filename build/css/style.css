@@ -3764,7 +3764,6 @@ a {
 .wrapper::before, .wrapper::after {
   content: '';
   display: table;
-  zoom: 1;
 }
 
 .wrapper::after {
@@ -4315,7 +4314,6 @@ a {
 .btn--large::before, .btn--large::after {
   content: '';
   display: table;
-  zoom: 1;
 }
 
 .btn--large::after {
@@ -4634,6 +4632,10 @@ a {
 .intro {
   background-color: #2e3844;
   color: #fff;
+}
+
+.intro__title {
+  display: none;
 }
 
 .jonbecklink {
@@ -5242,7 +5244,6 @@ footer {
 .footerBar::before, .footerBar::after {
   content: '';
   display: table;
-  zoom: 1;
 }
 
 .footerBar::after {
